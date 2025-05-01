@@ -1,8 +1,4 @@
-# studio-albatros.walrus-labs.fr
-studio-albatros.walrus-labs.fr {
-  reverse_proxy 172.17.0.1:7030
-} 
-staging.studio-albatros.walrus-labs.fr {
+(securite) {
   header {
     Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
     Content-Security-Policy "default-src 'self';script-src 'self';style-src 'self' https://fonts.googleapis.com 'unsafe-inline';font-src 'self' https://fonts.gstatic.com;img-src 'self' data:;connect-src 'self';"
@@ -13,6 +9,14 @@ staging.studio-albatros.walrus-labs.fr {
     -Server
     -Via
   }
+}
+
+# studio-albatros.walrus-labs.fr
+studio-albatros.walrus-labs.fr {
+  reverse_proxy 172.17.0.1:7030
+} 
+staging.studio-albatros.walrus-labs.fr {
+  import securite
   reverse_proxy 172.17.0.1:7031 {
     header_down -X-Powered-By
   }
@@ -28,7 +32,10 @@ staging.lucq-cyrille-plaquiste-peintre.fr {
 
 # quentin-douville.walrus-labs.fr
 quentin-douville.walrus-labs.fr {
-  reverse_proxy 172.17.0.1:7010
+  import securite
+  reverse_proxy 172.17.0.1:7010 {
+    header_down -X-Powered-By
+  }
 }
 staging.quentin-douville.walrus-labs.fr {
   reverse_proxy 172.17.0.1:7011
