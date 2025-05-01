@@ -1,0 +1,36 @@
+# studio-albatros.walrus-labs.fr
+studio-albatros.walrus-labs.fr {
+  reverse_proxy angular-app:7030
+}
+staging.studio-albatros.walrus-labs.fr {
+  reverse_proxy angular-app:7031
+}
+
+# lucq-cyrille-plaquiste-peintre.fr
+lucq-cyrille-plaquiste-peintre.fr {
+  reverse_proxy angular-app:7020
+}
+staging.lucq-cyrille-plaquiste-peintre.fr {
+  reverse_proxy angular-app:7021
+}
+
+# quentin-douville.walrus-labs.fr
+quentin-douville.walrus-labs.fr {
+  reverse_proxy angular-app:7021
+}
+staging.quentin-douville.walrus-labs.fr {
+  reverse_proxy angular-app:7021
+}
+
+# testation.walrus-labs.fr
+testation.walrus-labs.fr {
+  reverse_proxy angular-app:7000
+}
+staging.testation.walrus-labs.fr {
+  reverse_proxy angular-app:7001
+}
+
+# uptime.walrus-labs.fr
+uptime.walrus-labs.fr {
+  reverse_proxy angular-app:3001
+}
