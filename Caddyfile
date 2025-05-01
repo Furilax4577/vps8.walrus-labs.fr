@@ -4,6 +4,11 @@ studio-albatros.walrus-labs.fr {
 } 
 staging.studio-albatros.walrus-labs.fr {
   encode zstd gzip
+  header {
+    Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+    -Server
+    -Via
+  }
   reverse_proxy 172.17.0.1:7031 
 }
 
