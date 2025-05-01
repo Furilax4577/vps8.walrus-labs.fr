@@ -1,45 +1,55 @@
 # Configuration globale
-encode br gzip
-
-header {
-  Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
-  -Server
-  -Via
+(import-optimisation) {
+  encode zstd gzip
+  header {
+   Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+   -Server
+   -Via
+  }
 }
 
 # studio-albatros.walrus-labs.fr
 studio-albatros.walrus-labs.fr {
+  import import-optimisation
   reverse_proxy 172.17.0.1:7030
 } 
 staging.studio-albatros.walrus-labs.fr {
+  import import-optimisation
   reverse_proxy 172.17.0.1:7031 
 }
 
 # lucq-cyrille-plaquiste-peintre.fr
 lucq-cyrille-plaquiste-peintre.fr {
+  import import-optimisation
   reverse_proxy 172.17.0.1:7020
 }
 staging.lucq-cyrille-plaquiste-peintre.fr {
+  import import-optimisation
   reverse_proxy 172.17.0.1:7021
 }
 
 # quentin-douville.walrus-labs.fr
 quentin-douville.walrus-labs.fr {
+  import import-optimisation
   reverse_proxy 172.17.0.1:7010
 }
 staging.quentin-douville.walrus-labs.fr {
+  import import-optimisation
   reverse_proxy 172.17.0.1:7011
 }
 
 # testation.walrus-labs.fr
 testation.walrus-labs.fr {
+  import import-optimisation
   reverse_proxy 172.17.0.1:7000
 }
 staging.testation.walrus-labs.fr {
+  import import-optimisation
   reverse_proxy 172.17.0.1:7001
 }
 
 # uptime.walrus-labs.fr
 uptime.walrus-labs.fr {
+  import import-optimisation
   reverse_proxy 172.17.0.1:3001
 } 
