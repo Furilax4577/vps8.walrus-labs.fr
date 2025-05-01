@@ -1,9 +1,12 @@
+# Configuration globale
+encode gzip br
+
 # studio-albatros.walrus-labs.fr
 studio-albatros.walrus-labs.fr {
   reverse_proxy 172.17.0.1:7030
-}
+} 
 staging.studio-albatros.walrus-labs.fr {
-  reverse_proxy 172.17.0.1:7031
+  reverse_proxy 172.17.0.1:7031 
 }
 
 # lucq-cyrille-plaquiste-peintre.fr
@@ -33,4 +36,4 @@ staging.testation.walrus-labs.fr {
 # uptime.walrus-labs.fr
 uptime.walrus-labs.fr {
   reverse_proxy 172.17.0.1:3001
-}
+} 
