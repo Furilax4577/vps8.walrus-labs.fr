@@ -6,9 +6,9 @@ staging.studio-albatros.walrus-labs.fr {
   header {
     Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
     -Server
+    -Via
   }
   reverse_proxy 172.17.0.1:7031 {
-    header_down -Via
     header_down -X-Powered-By
   }
 }
