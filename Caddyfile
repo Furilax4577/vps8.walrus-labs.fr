@@ -6,6 +6,7 @@ staging.studio-albatros.walrus-labs.fr {
   header {
     Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
     Content-Security-Policy "default-src 'self';script-src 'self';style-src 'self' https://fonts.googleapis.com 'unsafe-inline';font-src 'self' https://fonts.gstatic.com;img-src 'self' data:;connect-src 'self';"
+    Permissions-Policy "accelerometer=(), autoplay=(), camera=(), encrypted-media=(), fullscreen=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), usb=()"
     Referrer-Policy "strict-origin-when-cross-origin"
     X-Frame-Options "SAMEORIGIN"
     X-Content-Type-Options "nosniff"
