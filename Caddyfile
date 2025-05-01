@@ -1,6 +1,11 @@
 # Configuration globale
 encode br gzip
-header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+
+header {
+  Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+  -Server
+  -Via
+}
 
 # studio-albatros.walrus-labs.fr
 studio-albatros.walrus-labs.fr {
