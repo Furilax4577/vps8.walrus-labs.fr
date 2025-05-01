@@ -16,10 +16,10 @@ staging.lucq-cyrille-plaquiste-peintre.fr {
 
 # quentin-douville.walrus-labs.fr
 quentin-douville.walrus-labs.fr {
-  reverse_proxy 172.17.0.1:7021
+  reverse_proxy 172.17.0.1:7010
 }
 staging.quentin-douville.walrus-labs.fr {
-  reverse_proxy 172.17.0.1:7021
+  reverse_proxy 172.17.0.1:7011
 }
 
 # testation.walrus-labs.fr
