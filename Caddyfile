@@ -1,6 +1,6 @@
 # Configuration globale
 (import-optimisation) {
-  encode zstd gzip
+ 
   header {
    Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
    -Server
@@ -14,7 +14,7 @@ studio-albatros.walrus-labs.fr {
   reverse_proxy 172.17.0.1:7030
 } 
 staging.studio-albatros.walrus-labs.fr {
-  import import-optimisation
+  encode zstd gzip
   reverse_proxy 172.17.0.1:7031 
 }
 
