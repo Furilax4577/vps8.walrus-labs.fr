@@ -1,71 +1,74 @@
 (default) {
-  encode zstd gzip
-  header {
-    Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
-    Permissions-Policy "accelerometer=(), autoplay=(), camera=(), encrypted-media=(), fullscreen=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), usb=()"
-    Referrer-Policy "strict-origin-when-cross-origin"
-    X-Frame-Options "SAMEORIGIN"
-    X-Content-Type-Options "nosniff"
-    -Server
-    -Via
-  }
+	encode zstd gzip
+	header {
+		Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+		Permissions-Policy "accelerometer=(), autoplay=(), camera=(), encrypted-media=(), fullscreen=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), usb=()"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		X-Frame-Options "SAMEORIGIN"
+		X-Content-Type-Options "nosniff"
+		-Server
+		-Via
+	}
 }
 # Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com;"
 
 # studio-albatros.walrus-labs.fr
 studio-albatros.walrus-labs.fr {
-  import default
-  reverse_proxy 172.17.0.1:7030 {
-    header_down -X-Powered-By
-  }
-} 
+	import default
+	reverse_proxy 172.17.0.1:7030 {
+		header_down -X-Powered-By
+	}
+}
 staging.studio-albatros.walrus-labs.fr {
-  import default
-  reverse_proxy 172.17.0.1:7031 {
-    header_down -X-Powered-By
-  }
+	import default
+	reverse_proxy 172.17.0.1:7031 {
+		header_down -X-Powered-By
+	}
 }
 
 # lucq-cyrille-plaquiste-peintre.fr
 lucq-cyrille-plaquiste-peintre.fr {
-  import default
-  reverse_proxy 172.17.0.1:7020 {
-    header_down -X-Powered-By
-  }
+	import default
+	reverse_proxy 172.17.0.1:7020 {
+		header_down -X-Powered-By
+	}
 }
 staging.lucq-cyrille-plaquiste-peintre.fr {
-  import default
-  reverse_proxy 172.17.0.1:7021 {
-    header_down -X-Powered-By
-  }
+	import default
+	reverse_proxy 172.17.0.1:7021 {
+		header_down -X-Powered-By
+	}
 }
 
 # quentin-douville.walrus-labs.fr
 quentin-douville.walrus-labs.fr {
-  import default
-  reverse_proxy 172.17.0.1:7010 {
-    header_down -X-Powered-By
-  }
+	import default
+	reverse_proxy 172.17.0.1:7010 {
+		header_down -X-Powered-By
+	}
 }
 staging.quentin-douville.walrus-labs.fr {
-  import default
-  reverse_proxy 172.17.0.1:7011 {
-    header_down -X-Powered-By
-  }
+	import default
+	reverse_proxy 172.17.0.1:7011 {
+		header_down -X-Powered-By
+	}
 }
 
 # testation.walrus-labs.fr
 testation.walrus-labs.fr {
-  reverse_proxy 172.17.0.1:7000 
+	reverse_proxy 172.17.0.1:7000 {
+	}
 }
 staging.testation.walrus-labs.fr {
-  reverse_proxy 172.17.0.1:7001 
+	reverse_proxy 172.17.0.1:7001 {
+		header_down -X-Powered-By
+	}
 }
 
 # uptime.walrus-labs.fr
 uptime.walrus-labs.fr {
-  import default
-  reverse_proxy 172.17.0.1:3001 {
-    header_down -X-Powered-By
-  }
-} 
+	import default
+	reverse_proxy 172.17.0.1:3001 {
+		header_down -X-Powered-By
+	}
+}
