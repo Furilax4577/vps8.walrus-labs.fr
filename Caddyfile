@@ -56,16 +56,10 @@ staging.quentin-douville.walrus-labs.fr {
 
 # testation.walrus-labs.fr
 testation.walrus-labs.fr {
-  import default
-  reverse_proxy 172.17.0.1:7000 {
-    header_down -X-Powered-By
-  }
+  reverse_proxy 172.17.0.1:7000 
 }
 staging.testation.walrus-labs.fr {
-  import default
-  reverse_proxy 172.17.0.1:7001 {
-    header_down -X-Powered-By
-  }
+  reverse_proxy 172.17.0.1:7001 
 }
 
 # uptime.walrus-labs.fr
