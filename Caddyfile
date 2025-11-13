@@ -12,6 +12,20 @@
 }
 # Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com;"
 
+# ecat.walrus-labs.fr
+ecat.walrus-labs.fr {
+	import default
+
+	# Chemin vers ton build Angular
+	root * /www/monoprix/dist/ecat/browser
+
+	# Toujours renvoyer index.html (Angular router)
+	try_files {path} /index.html
+
+	# Servir les fichiers
+	file_server
+}
+
 # studio-albatros.walrus-labs.fr
 studio-albatros.walrus-labs.fr {
 	import default
