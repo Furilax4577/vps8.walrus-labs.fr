@@ -98,9 +98,3 @@ ecat.walrus-labs.fr {
 		header_down -X-Powered-By
 	}
 }
-ecat-api.walrus-labs.fr {
-	import default
-	reverse_proxy 172.17.0.1:3000 {
-		header_down -X-Powered-By
-	}
-}
