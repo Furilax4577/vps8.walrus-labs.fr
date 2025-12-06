@@ -12,6 +12,19 @@ services:
       - caddy_config:/config
     restart: unless-stopped
 
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: n8n
+    environment:
+      - N8N_HOST=n8n.walrus-labs.fr
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=https
+      - WEBHOOK_URL=https://n8n.walrus-labs.fr/
+    volumes:
+      - n8n_data:/home/node/.n8n
+    restart: unless-stopped
+
 volumes:
   caddy_data:
   caddy_config:
+  n8n_data:

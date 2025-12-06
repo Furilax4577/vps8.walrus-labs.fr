@@ -98,3 +98,11 @@ ecat.walrus-labs.fr {
 		header_down -X-Powered-By
 	}
 }
+
+# n8n.walrus-labs.fr
+n8n.walrus-labs.fr {
+	import default
+	reverse_proxy n8n:5678 {
+		header_down -X-Powered-By
+	}
+}
